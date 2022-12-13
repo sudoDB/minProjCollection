@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>MiniProj</title>
+</head>
+<body class="dark">
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Rodrigue Fernandez</span>
+                    <span class="profession">Dev / SysAdmin</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#p2p_chat">
+                            <i class='bx bx-conversation icon'></i>
+                            <span class="text nav-text">P2P Chat</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#pwd_gen">
+                            <i class='bx bx-lock-alt icon' ></i>
+                            <span class="text nav-text">PWD Generator</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#hex_color">
+                            <i class='bx bx-palette icon' ></i>
+                            <span class="text nav-text">HEX color picker</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#toDo_list">
+                            <i class='bx bx-list-ul icon'></i>
+                            <span class="text nav-text">ToDo List</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#timer">
+                            <i class='bx bx-timer icon'></i>
+                            <span class="text nav-text">Timer</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Projects collection</div>
+        <p class="description">Collection de mini projets de développement</p>
+        <br><br><br>
+        
+        <div class="content">
+            <div id="p2p_chat">
+                <h1>P2P Chat</h1>
+                <p class="description">Chat en temps réel basé sur GUN, une librairie JS permettant le stockage de données de pair à pair</p>
+                <iframe src="./html/p2p_chat.html" width="500px" height="500px"></iframe>
+            </div>
+            
+    
+            <div id="pwd_gen">
+                <h1>Password Generator</h1>
+                <p class="description">Génération de mots de passe avec règles telles que: longueur, difficulté(charset) et l'encoding</p>
+                <iframe src="./html/pwd_gen.html" width="400px" height="250px"></iframe>
+            </div>
+            <br>
+    
+            <div id="hex_color">
+                <h1>HEX Color Picker</h1>
+                <p class="description">Palette de couleurs retournant la veleur HEX</p>
+                <iframe src="./html/hex_col.html" width="300px" height="200px"></iframe>
+            </div>
+            <br>
+
+            <div id="toDo_list">
+                <h1>ToDo list</h1>
+                <p class="description">__</p>
+                <iframe src="./html/toDo_list.html" width="300px" height="400px"></iframe>
+            </div>
+            <br>
+
+            <div id="timer">
+                <h1>Timer</h1>
+                <p class="description">__</p>
+                <iframe src="./html/timer.html" width="300px" height="100px"></iframe>
+            </div>
+            <br>
+        </div>
+
+    </section>
+
+    <script>
+        const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+
+        toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+        })
+
+        searchBtn.addEventListener("click" , () =>{
+            sidebar.classList.remove("close");
+        })
+
+        modeSwitch.addEventListener("click" , () =>{
+            body.classList.toggle("dark");
+
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Dark mode";
+            }else{
+                modeText.innerText = "Light mode";
+
+            }
+        });
+    </script>
+
+</body>
+</html>
